@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>830</width>
-    <height>318</height>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -172,6 +172,45 @@
      <string>计算结果</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="lineEdit_tle1">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>280</y>
+      <width>771</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1 40904U 15049F   19137.10311434  .00000307  00000-0  19787-4 0  9990</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_tle2">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>320</y>
+      <width>771</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2 40904  97.4655 139.6716 0013628 326.8599  73.2483 15.15333337202061</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>360</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>计算轨道高度</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -179,7 +218,7 @@
      <x>0</x>
      <y>0</y>
      <width>830</width>
-     <height>20</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

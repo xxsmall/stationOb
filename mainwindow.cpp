@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    Re = 6371.004; //km , earth radius
+    Re = 6378.137; //km , earth radius
     setWindowTitle("Compute Observation Range");
 }
 
@@ -55,4 +55,27 @@ void MainWindow::on_pushButton_run_clicked()
      {
          qDebug()<<"["<<resultList_Lon[i]<<","<<resultList_Lat[i]<<"],";
      }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    QString tle1 = ui->lineEdit_tle1->text();
+    QString tle2 = ui->lineEdit_tle2->text();
+
+    double  u = 3.98600441800e+14;
+    QString zhou_qi_str =  tle2.mid(52,10);
+    zhou_qi_str = zhou_qi_str.trimmed();
+    double zhou_qi = zhou_qi_str.toDouble();
+
+    double T = 86400.0/zhou_qi;
+
+    double A = T/(2*M_PI);
+
+    double r = pow(A*A*u,1.0/3.0);
+
+    r = r/1000.0;
+     qDebug()<<zhou_qi_str<<T/60.0<<r<<QString::number(zhou_qi,'f',6);
+    double h = r-Re;
+    ui->doubleSpinBox_orbitHeight->setValue(h);
+
 }
